@@ -1,0 +1,26 @@
+# Video dosyaları (GitHub 100MB limiti)
+çikokaanvideos/
+*.mp4
+*.mp4.backup
+
+# Backup dosyaları
+*.backup
+
+# Sıkıştırılmış görseller (orijinalleri yeterli)
+çikokaanimage_compressed/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/

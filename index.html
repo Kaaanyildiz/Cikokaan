@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çikokaan — Artisan Cocoa Reserve</title>
+  <meta name="description" content="Çikokaan, el yapımı çikolata deneyimi. Fabrikadan sofranıza, her bir parça tutku ile üretilir.">
+  
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/scenes.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="preload" as="image" href="çikokaanimage/image1.jpg">
+</head>
+<body>
+
+  <!-- ═══ PRELOADER ═══ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__logo">Çikokaan</div>
+    <div class="preloader__tagline">Artisan Cocoa Reserve</div>
+    <div class="preloader__progress-wrap">
+      <div class="preloader__progress-bar" id="preloaderBar"></div>
+    </div>
+    <div class="preloader__percent" id="preloaderPercent">0%</div>
+  </div>
+
+  <!-- ═══ SCROLL WRAPPER — Yüksekliği scroll mesafesini belirler ═══ -->
+  <div id="scroll-wrapper">
+
+    <!-- ═══ PINNED VIEWPORT — Her şey burada üst üste ═══ -->
+    <div id="viewport">
+
+      <!-- ── MEDIA LAYERS (sıralı, üst üste) ── -->
+      <div class="layer" id="l-img1">
+        <img src="çikokaanimage/image1.jpg" alt="Çikokaan fabrikası uzaktan">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid12">
+        <video src="çikokaanvideos/transition_1_2.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img2">
+        <img src="çikokaanimage/image2.jpg" alt="Fabrika yakın plan">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid23">
+        <video src="çikokaanvideos/transition_2_3.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img3">
+        <img src="çikokaanimage/image3.jpg" alt="Açık kapı">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid34">
+        <video src="çikokaanvideos/transition_3_4.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img4">
+        <img src="çikokaanimage/image4.jpg" alt="Fabrika içi, üç çocuk">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid45">
+        <video src="çikokaanvideos/transition_4_5.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img5">
+        <img src="çikokaanimage/image5.jpg" alt="Çocuk sütlü çikolata">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img6">
+        <img src="çikokaanimage/image6.jpg" alt="Çocuk çikolatayı açıyor">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img7">
+        <img src="çikokaanimage/image7.jpg" alt="Çocuk bitter çikolata">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img8">
+        <img src="çikokaanimage/image8.jpg" alt="Çikolata kırılıyor">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img9">
+        <img src="çikokaanimage/image9.jpg" alt="Kız beyaz çikolata">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img10">
+        <img src="çikokaanimage/image10.jpg" alt="Kız çikolatayı inceliyor">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid1011">
+        <video src="çikokaanvideos/transition_10_11.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img11">
+        <img src="çikokaanimage/image11.jpg" alt="Üç çocuk bir arada">
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid1112">
+        <video src="çikokaanvideos/transition_11_12.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-vid1213">
+        <video src="çikokaanvideos/transition_12_13.mp4?v=2" muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="layer layer--hidden" id="l-img13">
+        <img src="çikokaanimage/image13.jpg" alt="Ürün vitrini">
+      </div>
+
+      <div class="layer layer--hidden" id="l-img14">
+        <img src="çikokaanimage/image14.jpg" alt="Fabrika atmosfer">
+      </div>
+
+      <!-- ── GLOBAL OVERLAYS ── -->
+      <div class="overlay-vignette"></div>
+      <div class="overlay-flash" id="cream-flash"></div>
+
+      <!-- ── PREMIUM EFFECTS ── -->
+      <canvas class="particle-canvas" id="particle-canvas"></canvas>
+      <div class="color-grade"></div>
+
+      <!-- ── TEXT OVERLAYS ── -->
+      <div class="scene-text scene-text--bottom" id="text-1">
+        <p class="scene-text__heading">Her şey <span>burada</span> başlar...</p>
+      </div>
+
+      <div class="scroll-indicator" id="scroll-indicator">
+        <span class="scroll-indicator__text">Kaydırarak keşfet</span>
+        <div class="scroll-indicator__arrow"></div>
+      </div>
+
+      <div class="scene-text scene-text--bottom" id="text-5">
+        <p class="scene-text__heading">Hoş geldin, <span>keşfetmeye</span> hazır mısın?</p>
+      </div>
+
+      <div class="scene-text scene-text--bottom" id="text-7">
+        <p class="scene-text__heading">Üç küçük <span>usta</span>, üç eşsiz <span>lezzet</span></p>
+      </div>
+
+      <div class="scene-text scene-text--bottom" id="text-16">
+        <p class="scene-text__heading">Farklı <span>lezzetler</span>, aynı <span>tutku</span></p>
+      </div>
+
+      <!-- ── INFO CARDS ── -->
+      <div class="info-card" id="info-milk">
+        <div class="info-card__name">Artisan Cocoa Reserve</div>
+        <div class="info-card__divider"></div>
+        <div class="info-card__type">Sütlü Çikolata</div>
+        <div class="info-card__detail">Tek köken kakao • 100g</div>
+      </div>
+
+      <div class="info-card" id="info-dark">
+        <div class="info-card__name">Dark Origins</div>
+        <div class="info-card__divider"></div>
+        <div class="info-card__type">Bitter Çikolata</div>
+        <div class="info-card__detail">Single Estate • 100g</div>
+      </div>
+
+      <div class="info-card" id="info-white">
+        <div class="info-card__name">Creamy White Reserve</div>
+        <div class="info-card__divider"></div>
+        <div class="info-card__type">Beyaz Çikolata</div>
+        <div class="info-card__detail">Single Estate • 100g</div>
+      </div>
+
+      <!-- ── PRODUCT OVERLAY ── -->
+      <div class="products-overlay" id="products-overlay">
+        <div class="products-grid">
+          <div class="product-card" id="product-milk" data-product="milk">
+            <span class="product-card__icon">🍫</span>
+            <div class="product-card__name">Sütlü Klasik</div>
+            <div class="product-card__type">Artisan Cocoa Reserve</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__weight">100g</div>
+            <div class="product-card__price"><span class="product-card__currency">₺</span>189</div>
+          </div>
+          <div class="product-card" id="product-white" data-product="white">
+            <span class="product-card__icon">🤍</span>
+            <div class="product-card__name">Beyaz İnci</div>
+            <div class="product-card__type">Creamy White Reserve</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__weight">100g</div>
+            <div class="product-card__price"><span class="product-card__currency">₺</span>199</div>
+          </div>
+          <div class="product-card" id="product-dark" data-product="dark">
+            <span class="product-card__icon">🖤</span>
+            <div class="product-card__name">Bitter Asil</div>
+            <div class="product-card__type">Dark Cocoa Reserve</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__weight">100g</div>
+            <div class="product-card__price"><span class="product-card__currency">₺</span>219</div>
+          </div>
+        </div>
+        <div class="product-info-panel" id="product-info-panel">
+          <div class="product-info-panel__brand">Çikokaan Artisan Cocoa Reserve</div>
+          <div class="product-info-panel__title" id="panel-title">Sütlü Klasik</div>
+          <div class="product-info-panel__description" id="panel-desc">El yapımı, tek köken kakao çekirdeklerinden üretilmiş. Her bir parça, ustanın tutkusuyla şekillendirilmiştir.</div>
+          <button class="product-info-panel__cta">Keşfet →</button>
+        </div>
+      </div>
+
+      <!-- ── FOOTER ── -->
+      <div class="footer" id="footer">
+        <div class="footer__logo footer__logo--animate">Çikokaan</div>
+        <div class="footer__tagline">Artisan Cocoa Reserve</div>
+        <div class="footer__divider"></div>
+        <div class="footer__established">Est. MMXXVI • Handcrafted with passion</div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">Instagram</a>
+          <a href="#" class="footer__social-link">Twitter</a>
+          <a href="#" class="footer__social-link">E-Posta</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FIXED OVERLAYS (outside scroll) ═══ -->
+  <div class="film-grain" id="film-grain"></div>
+  <div class="mouse-light" id="mouse-light"></div>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="letterbox-bar letterbox-bar--top" id="letterbox-top"></div>
+  <div class="letterbox-bar letterbox-bar--bottom" id="letterbox-bottom"></div>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

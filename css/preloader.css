@@ -1,0 +1,92 @@
+/* ═══════════════════════════════════════════════
+   ÇIKOKAAN — Preloader Styles
+   ═══════════════════════════════════════════════ */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  background: var(--chocolate-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  transition: opacity 1.2s var(--ease-out-expo), visibility 1.2s;
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Logo */
+.preloader__logo {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: var(--gold-main);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: preloaderLogoIn 1.2s var(--ease-out-expo) 0.3s forwards;
+}
+
+/* Tagline */
+.preloader__tagline {
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: preloaderLogoIn 1s var(--ease-out-expo) 0.8s forwards;
+}
+
+/* Progress Bar */
+.preloader__progress-wrap {
+  width: min(280px, 60vw);
+  height: 2px;
+  background: rgba(212, 168, 83, 0.15);
+  border-radius: 1px;
+  overflow: hidden;
+  opacity: 0;
+  animation: preloaderLogoIn 0.8s var(--ease-out-expo) 1.2s forwards;
+}
+
+.preloader__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-main), var(--gold-light));
+  border-radius: 1px;
+  transition: width 0.3s var(--ease-in-out);
+}
+
+/* Progress Percentage */
+.preloader__percent {
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  letter-spacing: 0.2em;
+  color: var(--gold-dark);
+  opacity: 0;
+  animation: preloaderLogoIn 0.8s var(--ease-out-expo) 1.4s forwards;
+}
+
+/* Animations */
+@keyframes preloaderLogoIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloaderPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
